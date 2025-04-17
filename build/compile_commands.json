@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/kiberlizar/project /ta/build",
+  "command": "/usr/bin/c++   -g -std=gnu++20 -o CMakeFiles/untitled2.dir/main.cpp.o -c \"/home/kiberlizar/project /ta/main.cpp\"",
+  "file": "/home/kiberlizar/project /ta/main.cpp",
+  "output": "CMakeFiles/untitled2.dir/main.cpp.o"
+},
+{
+  "directory": "/home/kiberlizar/project /ta/build",
+  "command": "/usr/bin/c++   -g -std=gnu++20 -o CMakeFiles/untitled2.dir/io.cpp.o -c \"/home/kiberlizar/project /ta/io.cpp\"",
+  "file": "/home/kiberlizar/project /ta/io.cpp",
+  "output": "CMakeFiles/untitled2.dir/io.cpp.o"
+}
+]

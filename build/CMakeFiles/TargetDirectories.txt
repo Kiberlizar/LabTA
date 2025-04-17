@@ -1,0 +1,3 @@
+/home/kiberlizar/project /ta/build/CMakeFiles/untitled2.dir
+/home/kiberlizar/project /ta/build/CMakeFiles/edit_cache.dir
+/home/kiberlizar/project /ta/build/CMakeFiles/rebuild_cache.dir
