@@ -1,3 +1,0 @@
-C:/Users/olegb/CLionProjects/lab2, Oleg/cmake-build-debug/CMakeFiles/untitled2.dir
-C:/Users/olegb/CLionProjects/lab2, Oleg/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/olegb/CLionProjects/lab2, Oleg/cmake-build-debug/CMakeFiles/rebuild_cache.dir

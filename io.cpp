@@ -1,6 +1,6 @@
-#include <iostream>
 #include "io.h"
-#include "cmath"
+#include <iostream>
+#include <cmath>
 using namespace std;
 
 void readData(Audience* aud, int count) {
@@ -21,7 +21,7 @@ void printResults(Audience* aud, int count, int* capacities, int* capacity_count
 
     cout << "\nСтатистика за кількістю місць:\n";
     for (int i = 0; i < unique_count; i++) {
-        cout << "Кількість місць: " << capacities[i] 
+        cout << "Кількість місць: " << capacities[i]
              << " зустрічається " << capacity_count[i] << " раз(и)\n";
     }
 }
@@ -44,7 +44,7 @@ void countCapacities(Audience* aud, int count, int* capacities, int* capacity_co
     }
 }
 
-void gnomeSort(Audience* aud, int count, bool (*comparator)(Audience, Audience)) {
+void gnomeSort(Audience* aud, int count, std::function<bool(const Audience&, const Audience&)> comparator) {
     int i = 0;
     while (i < count) {
         if (i == 0 || comparator(aud[i - 1], aud[i])) {
@@ -70,9 +70,9 @@ bool compareByComputersAsc(Audience a, Audience b) {
 
 bool compareByBoardThenSeats(Audience a, Audience b) {
     if (a.board != b.board) {
-        return a.board > b.board; 
+        return a.board > b.board;
     }
-    return a.seats >= b.seats; 
+    return a.seats >= b.seats;
 }
 
 int jumpSearch(Audience* aud, int count, int target) {
