@@ -44,7 +44,7 @@ void countCapacities(Audience* aud, int count, int* capacities, int* capacity_co
     }
 }
 
-void gnomeSort(Audience* aud, int count, std::function<bool(const Audience&, const Audience&)> comparator) {
+void gnomeSort(Audience* aud, int count, bool (*comparator)(const Audience&, const Audience&)) {
     int i = 0;
     while (i < count) {
         if (i == 0 || comparator(aud[i - 1], aud[i])) {
@@ -56,19 +56,19 @@ void gnomeSort(Audience* aud, int count, std::function<bool(const Audience&, con
     }
 }
 
-bool compareByNumberAsc(Audience a, Audience b) {
+bool compareByNumberAsc(const Audience& a, const Audience& b) {
     return a.number <= b.number;
 }
 
-bool compareBySeatsDesc(Audience a, Audience b) {
+bool compareBySeatsDesc(const Audience& a, const Audience& b) {
     return a.seats >= b.seats;
 }
 
-bool compareByComputersAsc(Audience a, Audience b) {
+bool compareByComputersAsc(const Audience& a, const Audience& b) {
     return a.computers <= b.computers;
 }
 
-bool compareByBoardThenSeats(Audience a, Audience b) {
+bool compareByBoardThenSeats(const Audience& a, const Audience& b) {
     if (a.board != b.board) {
         return a.board > b.board;
     }
@@ -79,16 +79,20 @@ int jumpSearch(Audience* aud, int count, int target) {
     int step = sqrt(count);
     int prev = 0;
 
-    while (aud[min(step, count) - 1].number < target) {
+    while (myMin(step, count) - 1 < target) {
         prev = step;
         step += sqrt(count);
         if (prev >= count) return -1;
     }
 
-    for (int i = prev; i < min(step, count); i++) {
+    for (int i = prev; i < myMin(step, count); i++) {
         if (aud[i].number == target) {
             return i;
         }
     }
     return -1;
+}
+
+int myMin(int a, int b) {
+    return (a < b) ? a : b;
 }

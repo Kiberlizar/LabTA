@@ -1,5 +1,6 @@
 #include <iostream>
 #include "io.h"
+#include <cmath>
 
 using namespace std;
 
@@ -17,12 +18,6 @@ void sortCapacitiesManual(int* capacities, int* capacity_count, int unique_count
 }
 
 int main() {
-    #ifdef _WIN32
-        system("chcp 65001");
-    #else
-        setlocale(LC_ALL, "en_US.UTF-8");
-    #endif
-
     int count;
     cout << "Введіть кількість аудиторій: ";
     cin >> count;
