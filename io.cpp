@@ -79,7 +79,7 @@ int jumpSearch(Audience* aud, int count, int target) {
     int step = sqrt(count);
     int prev = 0;
 
-    while (myMin(step, count) - 1 < target) {
+    while (prev < count && aud[myMin(step, count) - 1].number < target) {
         prev = step;
         step += sqrt(count);
         if (prev >= count) return -1;
